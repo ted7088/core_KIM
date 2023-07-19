@@ -6,7 +6,7 @@ import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
 
-public class OrderServiceImpl implements OrderService{
+public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository = new MemoryMemberRepository();
     private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
@@ -17,6 +17,6 @@ public class OrderServiceImpl implements OrderService{
 
         int discountPrice = discountPolicy.discount(member, itemPrice); //할인정책에 회원정보를 넘김
 
-        return new Order(memberId,itemName,itemPrice,discountPrice);
+        return new Order(memberId, itemName, itemPrice, discountPrice);
     }
 }
